@@ -7,7 +7,6 @@ get_header(); ?>
 
 	<section id="primary" class="content-area col-sm-12">
 		<main id="main" class="site-main" role="main">
-
 			<?php
 			while ( have_posts() ) : the_post();
 
@@ -23,23 +22,6 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
-<!--
-</div>
-</div>
-
-
-<div class="container">
-	<div class="row">
-		<div class="col-sm-4">
-			<p>project 1</p>
-		</div>
-		<div class="col-sm-4">
-			<p>project 2</p>
-		</div>
-		<div class="col-sm-4">
-			<p>project 3</p>
-		</div>
--->
 
 
 

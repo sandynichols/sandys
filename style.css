@@ -1,5 +1,5 @@
 /*
- Theme Name:   Sandy
+ Theme Name:   Sandys
  Theme URI:    http://sandynichols.net/
  Description:  Child Theme
  Author:       John Doe
@@ -12,6 +12,117 @@
  Text Domain:  wp-bootstrap-starter
 */
 
-body {
-	border: 5px solid red;
+body:not(.theme-preset-active) #masthead .navbar-nav > li > a{
+	color:#a3c6dc !important;
 }
+.navbar-toggler {
+	background-color:#a3c6dc;
+}
+
+
+header#masthead{
+	background-color:#002154;
+}
+.texture {
+	background:#002154 url("images/pattern.png") repeat-x center top;
+}
+.disc {
+	background:url("images/bg-large-circle.png") no-repeat center 50px;
+}
+#page-sub-header {
+	padding-top:0;
+}
+#page-sub-header h1, #page-sub-header p {
+	color:#a3c6dc !important; /*overwrite admin*/
+}
+#page-sub-header h1 {
+	line-height:1 !important; /*overwrite admin*/
+}
+@media screen and (min-width: 576px) {
+	.sandy-header {
+		padding-top:150px;/*text in banner pushed down*/
+	}
+}
+
+
+/*Sandys stuff*/
+#sandy {
+	width:259px;
+	display:block;
+	margin:25px auto 25px auto;
+	}
+#me {
+	width:259px;
+	height:319px;
+	position:relative;
+	}
+#me-left {
+		position:absolute;
+		top:0;
+		left:0px;
+		z-index:2;
+		display:none;
+		}
+#me-right {
+		position:absolute;
+		top:0;
+		left:0px;
+		z-index:1;
+		display:none;
+		}
+#me-center {
+		position:absolute;
+		top:0;
+		left:0px;
+		z-index:3;
+		display:block;
+		}
+
+.sandyon {
+	display:block;
+	visibility:visible;
+	}
+.sandyoff {
+	display:none;
+	visibility:hidden;
+	}
+
+#moreaboutme {
+	float:left;
+	}
+#moreaboutme a {
+	color:#c2d545;
+	padding:10px;
+	background-color:#012257;
+	line-height:18px;
+	font-size:18px;
+	text-decoration:none;
+	display:block;
+	border:2px solid #012257;	
+	}
+#moreaboutme a.current, #contactme a.current {
+	color:#002256;
+	background-color:#99c64d;
+	}
+#contactme {
+	float:right;
+	}
+#contactme a {
+	color:#012257;
+	padding:10px;
+	background-color:#c2d545;
+	line-height:18px;
+	font-size:18px;
+	text-decoration:none;
+	display:block;
+	border:2px solid #c2d545;
+	}
+	
+#contactme a:hover, #moreaboutme a:hover{
+	/*background-color:#99c64d;
+	color:#0299ff;*/
+	border:2px solid #a3c6dc;
+	}
+
+/*END sandys stuff */
+
