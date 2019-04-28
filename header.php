@@ -24,9 +24,12 @@
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'wp-bootstrap-starter' ); ?></a>
     <?php if(!is_page_template( 'blank-page.php' ) && !is_page_template( 'blank-page-with-container.php' )): ?>
-	<header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
+    <header id="masthead" class="site-header navbar-static-top <?php echo wp_bootstrap_starter_bg_class(); ?>" role="banner">
         <div class="container">
-            <nav class="navbar navbar-expand-xl p-0">
+            <nav class="navbar navbar-expand-xl p-0">          
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
                 <div class="navbar-brand">
                     <?php if ( get_theme_mod( 'wp_bootstrap_starter_logo' ) ): ?>
                         <a href="<?php echo esc_url( home_url( '/' )); ?>">
@@ -37,9 +40,7 @@
                     <?php endif; ?>
 
                 </div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+
 
                 <?php
                 wp_nav_menu(array(
@@ -57,8 +58,9 @@
 
             </nav>
         </div>
-	</header><!-- #masthead -->
+	</header>
     <?php if(is_front_page() && !get_theme_mod( 'header_banner_visibility' )): ?>
+    <div id="page">
         <div id="page-sub-header" <?php if(has_header_image()) { ?>style="background-image: url('<?php header_image(); ?>');" <?php } ?>>
             <div class="texture">
                 <div class="disc">
@@ -67,8 +69,14 @@
                             <div class="col-sm-6 sandy-header">
 
                             <h1>
-                               Sandy Nichols<br/>Web Design
-                            </h1>
+                    <?php
+                    if(get_theme_mod( 'header_banner_title_setting' )){
+                        echo get_theme_mod( 'header_banner_title_setting' );
+                    }else{
+                        echo 'Wordpress + Bootstrap';
+                    }
+                    ?>
+                </h1>
                             <p>
                                 <?php
                                 if(get_theme_mod( 'header_banner_tagline_setting' )){
@@ -82,20 +90,23 @@
                             <div class="col-sm-6">
                             <div id="sandy">
                                 <div id="me">
-                                <span id="me-left"><img src="http://www.sandynichols.net/images/me-left.png" alt="Sandy Nichols Web Designer"></span>
+                                <span id="me-left"><img src="https://www.sandynichols.net/images/me-left.png" alt="Sandy Nichols Web Designer"></span>
 
-                                <span id="me-center"><img src="http://www.sandynichols.net/images/me-center.png" alt="Sandy Nichols Web Designer"></span>
+                                <span id="me-center"><img src="https://www.sandynichols.net/images/me-center.png" alt="Sandy Nichols Web Designer"></span>
 
-                                <span id="me-right"><img src="http://www.sandynichols.net/images/me-right.png" alt="Sandy Nichols Web Designer"></span>
+                                <span id="me-right"><img src="https://www.sandynichols.net/images/me-right.png" alt="Sandy Nichols Web Designer"></span>
                                 </div><!--off me-->
 
-                                <div id="moreaboutme">
-                                <a href="http://sandynichols.net/web-portfolio/" onMouseOver="javascript:lefttofront()" onMouseOut="javascript:centertofront()"title="Sandy Nichols Web Designer Portfolio">Web Portfolio</a>
+
+                                <div id="resume-me">
+                                <a href="/resume2019/" onMouseOver="javascript:righttofront()" onMouseOut="javascript:centertofront()" title="Contact Sandy Nichols">Resum&eacute;</a>
+                                </div><!--off resume-me-->
+
+                                <div id="usability-blog-me">
+                                <a href="https://www.sandynichols.net/blog/" onMouseOver="javascript:lefttofront()" onMouseOut="javascript:centertofront()"title="Sandy Nichols Web Blog">Usability Blog</a>
                                 </div><!--off moreaboutme-->
 
-                                <div id="contactme">
-                                <a href="https://www.sandynichols.net/blog/wp-content/uploads/2019/03/sandy-nichols-2019.pdf" target="_blank" onMouseOver="javascript:righttofront()" onMouseOut="javascript:centertofront()" title="Contact Sandy Nichols">Resume'</a>
-                                </div><!--off contactme-->
+                               
                                 <div class="clearfix"></div>
                             </div><!--off sandy wrapper-->
 
@@ -126,7 +137,8 @@
                                                 myObject1.style.display="block";   
                                             var myObject3=document.getElementById('me-center');	
                                                 myObject3.style.display="none";	  		
-                                                };								
+                                                };
+
                                         </script>							
 
                             </div><!-- off 6-->
@@ -135,25 +147,37 @@
                     <!--  <a href="#content" class="page-scroller"><i class="fa fa-fw fa-angle-down"></i></a>  -->
 
                     
-<h2>Website Currently under construction, 3/31/19</h2>
-<p>Please check back next week for an improved look!!!</p>
-
-
                 </div><!-- container-->
             </div><!-- texture -->
         </div><!-- page-sub-header-->
+    </div>
+
+    <section class="featured-web">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1>Featured Projects</h1>      
+                </div>
+            </div><!-- row -->
+                <div class="row">
+                    <div class="col-lg-4">
+                        <a href="https://www.sandynichols.net/momseggs-com//" title="MomsEggs.com Website Review"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/featured-moms.jpg" alt="website MomsEggs.com" class="featured-project"></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="https://www.sandynichols.net/healthcare-app-overview/" title="Website Project: Healthcare App Prototype"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/featured-healthcare-app.jpg" alt="website project for healthcare app" class="featured-project"></a>
+                    </div>
+                    <div class="col-lg-4">
+                        <a href="https://www.sandynichols.net/interactive-injury-locator/" title="Website Project: Interactive Injury Locator"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/featured-interactive-injury.jpg" alt="website project Interactive Injury" class="featured-project"></a>
+                    </div>
+                </div><!--row-->            
+             </div><!--container-->             
+	</section>
+
     <?php endif; ?>
 
 
-    <div class="sandy-callouts-home container">
-    <h2>Sandy's Blog</h2><br/>
-     </div>
-
     
-    
-    
-    
-    <div id="content" class="site-content">
+    <div id="content" class="site-content texture">
 		<div class="container">
 			<div class="row">
                 <?php endif; ?>
